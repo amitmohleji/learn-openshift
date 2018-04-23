@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: hello-openshift
+  name: hello-openshift
+  namespace: mypetclinic
+spec:
+  containers:
+    - image: >-
+        openshift/hello-openshift
+      name: hello-openshift
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8888
+          protocol: TCP

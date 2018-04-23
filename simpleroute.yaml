@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    app: hello-openshift
+  name: my-route
+  namespace: mypetclinic
+spec:
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: hello-openshift
+    weight: 100
